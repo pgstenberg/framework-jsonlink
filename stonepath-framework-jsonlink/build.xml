@@ -26,7 +26,9 @@
   <target name="release" depends="compile"
         description="generate the distribution" >
 
-    <jar jarfile="${release}/${ant.project.name}.jar" basedir="${build}"/>
+    <jar jarfile="${release}/${ant.project.name}.jar" basedir="${build}">
+        <zipgroupfileset dir="${lib}" includes="**/*.jar"/>
+    </jar>
   </target>
 
   <target name="clean"
